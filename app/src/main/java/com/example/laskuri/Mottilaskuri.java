@@ -10,6 +10,6 @@ public class Mottilaskuri {
     }
 
     public double getTilavuus(){
-        return this.rungonYmparys * this.pituus;
+        return this.pituus * this.rungonYmparys * this.rungonYmparys / (4 * 3.1415926536);
     }
 }

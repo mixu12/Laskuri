@@ -4,10 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@drawable/taustakuva"
+    >
+
 
     <Button
         android:id="@+id/laskeNappain"
+        style="@android:style/Widget.DeviceDefault.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -25,6 +29,7 @@
         android:ems="10"
         android:inputType="numberDecimal"
         android:textAlignment="center"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/rungonymparysTeksti" />
 
@@ -36,6 +41,7 @@
         android:layout_marginTop="10dp"
         android:text="Puun rungonympärys m"
         android:textAlignment="center"
+        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -47,6 +53,7 @@
         android:layout_marginEnd="5dp"
         android:text="Puun pituus m"
         android:textAlignment="center"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -59,6 +66,7 @@
         android:ems="10"
         android:inputType="numberDecimal"
         android:textAlignment="center"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pituusTeksti" />
 
@@ -69,6 +77,7 @@
         android:layout_marginTop="20dp"
         android:text="Puun tilavuus m^3"
         android:textAlignment="center"
+        android:textColor="@color/black"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/laskeNappain" />
@@ -79,6 +88,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
         android:textAlignment="center"
+        android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

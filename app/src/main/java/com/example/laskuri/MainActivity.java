@@ -9,7 +9,11 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.text.DecimalFormat;
+
 public class MainActivity extends AppCompatActivity {
+
+    DecimalFormat kaksiDesimaalia = new DecimalFormat("#,###,##0.00");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -20,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
         EditText rungonYmparys = (EditText) findViewById(R.id.rungonymparys);
         EditText puunPituus = (EditText) findViewById(R.id.pituus);
         TextView puunTilavuus = (TextView) findViewById(R.id.tilavuus);
+
 
         rungonYmparys.setText("");
         puunPituus.setText("");
@@ -35,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
 
                     double tilavuus = mottilaskuri.getTilavuus();
 
-                    puunTilavuus.setText(String.valueOf(tilavuus));
+                    puunTilavuus.setText(String.valueOf(kaksiDesimaalia.format(tilavuus)));
                 } else{
                     Toast.makeText(MainActivity.this, "Anna puun pituus ja korkeus", Toast.LENGTH_LONG).show();
                 }
