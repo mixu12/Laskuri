@@ -4,14 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
     android:background="@drawable/taustakuva"
-    >
+    tools:context=".MainActivity">
 
 
     <Button
         android:id="@+id/laskeNappain"
-        style="@android:style/Widget.DeviceDefault.Button.Colored"
+        style="@style/Widget.AppCompat.Button.Colored"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
@@ -83,15 +82,75 @@
         app:layout_constraintTop_toBottomOf="@+id/laskeNappain" />
 
     <TextView
+        android:id="@+id/summaTeksti"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Summa m^3"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilavuus" />
+
+    <TextView
         android:id="@+id/tilavuus"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="5dp"
+        android:text="0.00"
         android:textAlignment="center"
         android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tilavuusTeksti" />
+
+    <TextView
+        android:id="@+id/summaKaadoista"
+        android:layout_width="95dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="40dp"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/nollaaSumma"
+        app:layout_constraintStart_toEndOf="@+id/tallennaKantaan"
+        app:layout_constraintTop_toBottomOf="@+id/tilavuus" />
+
+    <Button
+        android:id="@+id/tallennaKantaan"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="30dp"
+        android:text="Tallenna"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilavuus" />
+
+    <Button
+        android:id="@+id/nollaaSumma"
+        style="@style/Widget.AppCompat.Button.Colored"
+        android:layout_width="100dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="5dp"
+        android:text="Nollaa"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilavuus" />
+
+    <TextView
+        android:id="@+id/vali"
+        android:layout_width="95dp"
+        android:layout_height="wrap_content"
+        android:text="__________"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tilavuus" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
