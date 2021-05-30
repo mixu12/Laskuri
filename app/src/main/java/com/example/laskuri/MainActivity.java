@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         tallenna.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (Double.valueOf(puunTilavuus.getText().toString()) > 0)
+                if (!puunTilavuus.getText().toString().equals("0,00"))
                     tallenna(rungonYmparys, puunPituus);
                 else {
                     Toast.makeText(MainActivity.this, "Laske ensin tilavuus", Toast.LENGTH_LONG).show();
