@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
         EditText puunPituus = (EditText) findViewById(R.id.pituus);
         TextView puunTilavuus = (TextView) findViewById(R.id.tilavuus);
 
+        //hakee tallennetut määrän heti käynnistettäessä näytölle
         naytaSumma();
 
         rungonYmparys.setText("");
@@ -43,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
         tallenna.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (!puunTilavuus.getText().toString().equals("0,00"))
+                if (!puunTilavuus.getText().toString().equals("0,00")) //tarkistaa, että jotain on laskettuna ennen tallennusta
                     tallenna(rungonYmparys, puunPituus);
                 else {
                     Toast.makeText(MainActivity.this, "Laske ensin tilavuus", Toast.LENGTH_LONG).show();
@@ -59,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
+    //Varmistaa, että lähtöarvot on annettu ennen laskentaa
     public boolean tarkastaLahtoarvot(EditText rungonYmparys, EditText puunPituus) {
         if ((!rungonYmparys.getText().toString().equals("")) && (!puunPituus.getText().toString().equals(""))) {
             return true;
@@ -68,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void laske(EditText rungonYmparys, EditText puunPituus){
-        Mottilaskuri mottilaskuri = mottilaskuriin(rungonYmparys, puunPituus);
+        Mottilaskuri mottilaskuri = mottilaskuriin(rungonYmparys, puunPituus); //Olio luodaan omalla metodilla.
 
         if(mottilaskuri != null) {
             double tilavuus = mottilaskuri.getTilavuus();
@@ -89,6 +91,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public Mottilaskuri mottilaskuriin(EditText rungonYmparys, EditText puunPituus) {
+        //Jos lähtöarvot on annettu, luo olion, joka sisältää rungon ympäryksen ja puun pituuden. Palauttaa olion
         if (tarkastaLahtoarvot(rungonYmparys, puunPituus)) {
             double ymparys = getymparys(rungonYmparys);
             double pituus = getPituus(puunPituus);
@@ -102,6 +105,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //Tallentaa tiedot tietokantaan.
     public void tallenna(EditText rungonYmparys, EditText puunPituus) {
         Puukanta puukanta = new Puukanta(MainActivity.this);
 
@@ -120,12 +124,14 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    //Tyhjentää tietokannan
     public void nollaaSumma(){
         Puukanta puukanta = new Puukanta(MainActivity.this);
         puukanta.tyhjennaPuukanta();
         naytaSumma();
     }
 
+    //Päivittää näytölle tietokantaan tallennetun summan
     public void naytaSumma(){
         Puukanta puukanta = new Puukanta(MainActivity.this);
 
